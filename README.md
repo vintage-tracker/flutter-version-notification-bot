@@ -51,10 +51,25 @@ cp repositories.json.sample repositories.json
 
 ### 4. 環境変数の設定
 
-以下の環境変数を設定します：
+`.env.example`をコピーして`.env`を作成し、環境変数を設定します：
 
+```bash
+cp .env.example .env
+# .envファイルを編集して実際の値を設定
+```
+
+または、環境変数を直接設定：
+
+```bash
+export SLACK_BOT_TOKEN=xoxb-your-token
+export GITHUB_TOKEN=ghp_your-token  # オプション
+```
+
+**必要な環境変数：**
 - `SLACK_BOT_TOKEN`: Slack Bot Token（必須）
 - `GITHUB_TOKEN`: GitHub Token（オプション、API制限回避用）
+
+**注意**: 現在のコードは`.env`ファイルを自動的に読み込みません。`dotenv`パッケージを使用する場合は、`npm install dotenv`でインストールし、`check.ts`の先頭に`import 'dotenv/config'`を追加してください。
 
 ### 5. ローカル実行
 
@@ -100,6 +115,7 @@ Botをチャンネルに招待：
 ├── src/
 │   └── check.ts                       # メインスクリプト
 ├── repositories.json.sample          # 設定ファイルのサンプル
+├── .env.example                      # 環境変数のサンプル
 ├── package.json
 └── README.md
 ```
