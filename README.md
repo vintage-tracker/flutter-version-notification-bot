@@ -1,4 +1,4 @@
-# Flutter Version Notification
+# Flutter Dependency Checker
 
 GitHub ActionsでFlutterバージョンとパッケージをチェックしてSlackに通知するシンプルなツールです。
 
